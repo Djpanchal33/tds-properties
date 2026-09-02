@@ -1,0 +1,3 @@
+import type { MetadataRoute } from "next";
+import { getPublishedProperties } from "@/lib/data";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> { const base = "https://tdsproperties.in"; const properties = await getPublishedProperties(); return [{url:base,lastModified:new Date(),changeFrequency:"weekly",priority:1},{url:`${base}/properties`,lastModified:new Date(),changeFrequency:"daily",priority:.9},{url:`${base}/about`,lastModified:new Date(),changeFrequency:"monthly",priority:.6},{url:`${base}/contact`,lastModified:new Date(),changeFrequency:"monthly",priority:.6},...properties.map(p=>({url:`${base}/properties/${p.slug}`,lastModified:new Date(),changeFrequency:"weekly" as const,priority:.8}))]; }

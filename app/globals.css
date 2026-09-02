@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --navy: #0f2547; --gold: #c9973f; --cream: #f7f5f2; --ink: #0a0f1a; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--cream); }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--font-body), Arial, sans-serif; }
+::selection { color: white; background: var(--gold); }
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+button, a, input, textarea, select { outline-color: var(--gold); }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.display { font-family: var(--font-display), Georgia, serif; letter-spacing: -.045em; }
+.eyebrow { color: var(--gold); font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.wrap { width: min(100% - 2rem, 82rem); margin-inline: auto; }
+.gold-rule { width: 3.25rem; height: 1px; background: var(--gold); }
+.glass { background: rgba(10,15,26,.62); backdrop-filter: blur(16px); }
+.text-balance { text-wrap: balance; }
+.field { width: 100%; border: 1px solid rgba(15,37,71,.18); background: white; padding: .82rem 1rem; color: var(--ink); transition: border-color .2s, box-shadow .2s; }
+.field:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,151,63,.14); outline: 0; }
+.admin-input { width: 100%; border: 1px solid #24334d; background: #101a2b; padding: .7rem .8rem; color: #f7f5f2; border-radius: .375rem; }
+.admin-input:focus { border-color: var(--gold); outline: 0; }
+.admin-label { display: block; margin: 1rem 0 .35rem; color: #b8c0ce; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.reveal-image { clip-path: inset(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
