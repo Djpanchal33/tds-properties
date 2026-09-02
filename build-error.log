@@ -1,0 +1,31 @@
+ ⚠ Compiled with warnings in 5.3s
+
+./lib/auth.ts
+A Node.js module is loaded ('crypto' at line 2) which is not supported in the Edge Runtime.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+
+Import trace for requested module:
+./lib/auth.ts
+
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/lib/deflate.js
+A Node.js API is used (CompressionStream at line: 18) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/lib/deflate.js
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/lib/jwe_decrypt.js
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/jwt/decrypt.js
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/index.js
+./lib/auth.ts
+
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/lib/deflate.js
+A Node.js API is used (DecompressionStream at line: 34) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/lib/deflate.js
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/lib/jwe_decrypt.js
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/jwt/decrypt.js
+./node_modules/.pnpm/jose@6.2.10/node_modules/jose/dist/webapi/index.js
+./lib/auth.ts
+

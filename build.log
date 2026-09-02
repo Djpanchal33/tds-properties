@@ -1,0 +1,47 @@
+   ▲ Next.js 15.5.24
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 52s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/22) ...
+   Generating static pages (5/22) 
+   Generating static pages (10/22) 
+   Generating static pages (16/22) 
+ ✓ Generating static pages (22/22)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                     Size  First Load JS
+┌ ○ /                                        5.56 kB         165 kB
+├ ○ /_not-found                                988 B         104 kB
+├ ○ /about                                   2.27 kB         162 kB
+├ ○ /admin                                   6.74 kB         109 kB
+├ ○ /admin/login                              1.9 kB         104 kB
+├ ƒ /api/admin/save                            143 B         103 kB
+├ ƒ /api/admin/upload                          143 B         103 kB
+├ ƒ /api/auth/logout                           143 B         103 kB
+├ ƒ /api/auth/request-otp                      143 B         103 kB
+├ ƒ /api/auth/verify-otp                       143 B         103 kB
+├ ƒ /api/enquiry                               143 B         103 kB
+├ ○ /contact                                 2.33 kB         155 kB
+├ ƒ /properties                              4.69 kB         162 kB
+├ ● /properties/[slug]                       3.01 kB         161 kB
+├   ├ /properties/riverfront-one-residences
+├   ├ /properties/sindhu-grove-villa
+├   ├ /properties/gift-skyline-offices
+├   └ [+3 more paths]
+├ ○ /robots.txt                                143 B         103 kB
+└ ○ /sitemap.xml                               143 B         103 kB
++ First Load JS shared by all                 103 kB
+  ├ chunks/325fc64d-e718e6b859f0dc4d.js      54.2 kB
+  ├ chunks/877-fb1441101401036a.js           46.4 kB
+  └ other shared chunks (total)              1.99 kB
+
+
+ƒ Middleware                                 39.3 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
