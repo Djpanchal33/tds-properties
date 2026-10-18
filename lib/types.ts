@@ -3,7 +3,7 @@ export type Property = {
   id: string; title: string; slug: string; price: number; currency: string; priceLabel?: string;
   type: string; status: PropertyStatus; bedrooms: number; bathrooms: number; area: number; areaUnit: string;
   city: string; locality: string; address: string; mapUrl?: string; latitude?: number; longitude?: number;
-  shortDescription: string; description: string; amenities: string[]; images: string[]; reraNumber?: string;
+  shortDescription: string; description: string; amenities: string[]; images: string[]; videoUrl?: string; reraNumber?: string;
   possessionDate?: string; details: { label: string; value: string }[]; published: boolean; featured: boolean;
 };
 export type Settings = {
@@ -15,3 +15,12 @@ export type Settings = {
   seo: { title: string; description: string; ogImage: string }; propertyTypes: string[]; amenities: string[]; localities: string[];
 };
 export type SiteData = { properties: Property[]; settings: Settings };
+export type AdminData = SiteData & { services: Service[]; blogPosts: BlogPost[] };
+export type Service = {
+  slug: string; eyebrow: string; title: string; summary: string; heroImage: string;
+  highlights: string[]; body: string[]; cta: string;
+};
+export type BlogPost = {
+  slug: string; title: string; excerpt: string; category: string; publishedAt: string;
+  readTime: string; image: string; body: string[]; tags: string[];
+};

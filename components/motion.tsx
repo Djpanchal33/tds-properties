@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -9,8 +9,17 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 }
 export function ScrollProgress() { const { scrollYProgress } = useScroll(); const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: .001 }); return <motion.div aria-hidden className="fixed inset-x-0 top-0 z-[90] h-[3px] origin-left bg-gold" style={{ scaleX }} />; }
 export function PageTransition({ children }: { children: React.ReactNode }) { return <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .35 }}>{children}</motion.div>; }
-export function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) { const reduced = useReducedMotion(); return <motion.div className={className} initial={reduced ? false : { opacity: 0, y: 40, filter: "blur(8px)" }} whileInView={reduced ? {} : { opacity: 1, y: 0, filter: "blur(0px)" }} viewport={{ once: true, amount: .16 }} transition={{ duration: .75, delay, ease: [0.22, 1, .36, 1] }}>{children}</motion.div>; }
-export function ImageReveal({ src, alt, className = "" }: { src: string; alt: string; className?: string }) { const reduced = useReducedMotion(); return <motion.div className={`overflow-hidden ${className}`} initial={reduced ? false : { clipPath: "inset(0 100% 0 0)" }} whileInView={reduced ? {} : { clipPath: "inset(0 0% 0 0)" }} viewport={{ once: true, amount: .2 }} transition={{ duration: 1, ease: [0.76, 0, .24, 1] }}><img className="h-full w-full object-cover" src={src} alt={alt} /></motion.div>; }
-export function CountUp({ value }: { value: number }) { const reduced = useReducedMotion(); return <span>{reduced ? value : <AnimatedNumber value={value} />}</span>; }
+export function useHydrationSafeReducedMotion() { const preference = useReducedMotion(); const [hydrated, setHydrated] = useState(false); useEffect(() => setHydrated(true), []); return hydrated ? preference : false; }
+export function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) { const reduced = useHydrationSafeReducedMotion(); return <motion.div className={className} initial={reduced ? false : { opacity: 0, y: 40, filter: "blur(8px)" }} whileInView={reduced ? {} : { opacity: 1, y: 0, filter: "blur(0px)" }} viewport={{ once: true, amount: .16 }} transition={{ duration: .75, delay, ease: [0.22, 1, .36, 1] }}>{children}</motion.div>; }
+export function ImageReveal({ src, alt, className = "" }: { src: string; alt: string; className?: string }) { const reduced = useHydrationSafeReducedMotion(); return <motion.div className={`overflow-hidden ${className}`} initial={reduced ? false : { clipPath: "inset(0 100% 0 0)" }} whileInView={reduced ? {} : { clipPath: "inset(0 0% 0 0)" }} viewport={{ once: true, amount: .2 }} transition={{ duration: 1, ease: [0.76, 0, .24, 1] }}><img className="h-full w-full object-cover" src={src} alt={alt} /></motion.div>; }
+export function CountUp({ value }: { value: number }) {
+  const reduced = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  // Browser motion preferences are unavailable during SSR. Keep the first
+  // server and client render identical, then animate after hydration.
+  if (!mounted) return <span>0</span>;
+  return <span>{reduced ? value.toLocaleString("en-IN") : <AnimatedNumber value={value} />}</span>;
+}
 function AnimatedNumber({ value }: { value: number }) { const ref = useRef<HTMLSpanElement>(null); useEffect(() => { const node = ref.current; if (!node) return; let start = 0; const begin = performance.now(); const duration = 1400; const frame = (time: number) => { const p = Math.min((time - begin) / duration, 1); const curved = 1 - Math.pow(1 - p, 4); node.textContent = Math.round(value * curved).toLocaleString("en-IN"); if (p < 1) start = requestAnimationFrame(frame); }; start = requestAnimationFrame(frame); return () => cancelAnimationFrame(start); }, [value]); return <span ref={ref}>0</span>; }
 export function ParallaxImage({ src, alt }: { src: string; alt: string }) { const { scrollYProgress } = useScroll(); const y = useTransform(scrollYProgress, [0, .45], ["0%", "20%"]); const scale = useTransform(scrollYProgress, [0, .35], [1.15, 1]); return <motion.img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover" style={{ y, scale }} />; }

@@ -8,8 +8,9 @@ import type { Settings } from "@/lib/types";
 
 const links = [
   { href: "/properties", label: "Properties" },
+  { href: "/services", label: "Services" },
+  { href: "/blog", label: "Insights" },
   { href: "/about", label: "Our story" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Brand({ light = false }: { name: string; light?: boolean }) {
@@ -48,11 +49,11 @@ export default function Header({ settings, transparent = false }: { settings: Se
       <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${raised ? "bg-cream/95 text-navy shadow-sm backdrop-blur" : "text-cream"}`}>
         <div className="wrap flex h-20 items-center justify-between">
           <Link href="/" aria-label="TDS Properties home"><Brand name={settings.logoText} light={!raised} /></Link>
-          <nav aria-label="Primary navigation" className="hidden items-center gap-8 md:flex">
+          <nav aria-label="Primary navigation" className="hidden items-center gap-5 xl:flex">
             {links.map((link) => <Link className="text-sm font-medium transition hover:text-gold" href={link.href} key={link.href}>{link.label}</Link>)}
             <Link href="/contact" className="rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-[#e3b85c]">Start a conversation</Link>
           </nav>
-          <button aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)} className="grid h-11 w-11 place-items-center md:hidden"><Menu /></button>
+          <button aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)} className="grid h-11 w-11 place-items-center xl:hidden"><Menu /></button>
         </div>
       </header>
 

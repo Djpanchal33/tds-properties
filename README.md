@@ -16,6 +16,7 @@ The public site works immediately using the committed files in `data/properties.
 | --- | --- | --- |
 | `ADMIN_EMAIL` | Admin access | The only email allowed to request a code. |
 | `RESEND_API_KEY` | OTP and enquiries | Verify a sending domain in Resend before production. |
+| `RESEND_FROM_EMAIL` | OTP and enquiries | A sender at your verified domain, e.g. `TDS Properties <hello@yourdomain.com>`. |
 | `JWT_SECRET` | Admin access | Use a long random string; changing it logs users out. |
 | `GITHUB_TOKEN` | Publishing editor changes | Fine-grained GitHub PAT, restricted to this repository. |
 | `GITHUB_REPO` | Publishing editor changes | `owner/repository`. |
@@ -30,7 +31,7 @@ Never expose `GITHUB_TOKEN`, `JWT_SECRET`, the Resend key, or the Blob token in 
 
 ## Resend
 
-Add and verify your sending domain in Resend, then replace `onboarding@resend.dev` in the two API routes with a sender at that domain. This is required before a production deployment can reliably deliver login codes and enquiries.
+Add and verify your sending domain in Resend, then set `RESEND_FROM_EMAIL` to a sender at that domain (for example, `TDS Properties <hello@yourdomain.com>`). This is required before a production deployment can reliably deliver login codes and enquiries. Failed deliveries are logged by the Vercel function without exposing email configuration details to visitors.
 
 ## Vercel deployment
 

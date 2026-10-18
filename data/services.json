@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "buy-property",
+    "eyebrow": "Buyer advisory",
+    "title": "Buy with a clear point of view.",
+    "summary": "Shortlist homes, plots and workspaces that match how you want to live or invest.",
+    "heroImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+    "highlights": ["Curated property shortlists", "Location and pricing context", "Site visits and negotiation support"],
+    "body": ["We start with your brief: purpose, preferred location, budget and timeline. Then we narrow the market into a practical shortlist.", "From the first viewing to a coordinated handover, TDS Properties helps you ask better questions and move with confidence."],
+    "cta": "Tell us what you are looking for"
+  },
+  {
+    "slug": "sell-property",
+    "eyebrow": "Seller advisory",
+    "title": "Position your property to be understood.",
+    "summary": "Present the story, value and strengths of your property to the right buyers.",
+    "heroImage": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=85",
+    "highlights": ["Pricing and market-position review", "Listing presentation and buyer qualification", "Viewing coordination and offer support"],
+    "body": ["A good sale begins with a clear narrative and realistic market context. We help package the information buyers need before they arrive for a viewing.", "Our process focuses on qualified conversations, transparent updates and support through the closing process."],
+    "cta": "Discuss selling your property"
+  },
+  {
+    "slug": "rent-property",
+    "eyebrow": "Leasing support",
+    "title": "Find the right fit for now.",
+    "summary": "Residential and commercial rentals matched to your move-in needs and terms.",
+    "heroImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+    "highlights": ["Tenant and property matching", "Viewing and requirement coordination", "Lease-document readiness guidance"],
+    "body": ["Whether you are moving into a family home, a new office or an investment rental, the details matter: access, amenities, term, deposit and timing.", "We help bring those details into one conversation so you can make a well-informed rental decision."],
+    "cta": "Share your rental requirement"
+  },
+  {
+    "slug": "residential-advisory",
+    "eyebrow": "Residential",
+    "title": "Homes shaped around everyday life.",
+    "summary": "Apartments, villas and plots across Ahmedabad and Gandhinagar.",
+    "heroImage": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85",
+    "highlights": ["Apartments, villas and plots", "Family and lifestyle priorities", "Neighbourhood comparisons"],
+    "body": ["Your home is more than a property type. We consider your daily route, space needs, future plans and the character of the neighbourhood.", "Use our residential guidance to compare options before you spend time on site visits."],
+    "cta": "Explore residential options"
+  },
+  {
+    "slug": "commercial-advisory",
+    "eyebrow": "Commercial",
+    "title": "Workspaces with room to grow.",
+    "summary": "Office, retail and commercial opportunities selected around business needs.",
+    "heroImage": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
+    "highlights": ["Office, retail and mixed-use spaces", "Access, parking and operational needs", "Commercial lease and purchase coordination"],
+    "body": ["A workspace should support the people who use it as well as the business behind it. We help compare commercial options through that practical lens.", "Share your area, location and operating requirements and we will start with a focused shortlist."],
+    "cta": "Discuss a commercial requirement"
+  },
+  {
+    "slug": "financial-services",
+    "eyebrow": "Financial coordination",
+    "title": "Keep the financial side organised.",
+    "summary": "Understand the questions to take to your bank, lender or independent financial adviser.",
+    "heroImage": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=85",
+    "highlights": ["Loan-readiness checklist", "Payment milestone overview", "Introductions to independent specialists on request"],
+    "body": ["TDS Properties can help you organise property-specific information for your lender or chosen adviser, including value, payment schedule and possession details.", "We do not provide lending, investment, tax or financial advice. Always obtain independent advice from appropriately licensed professionals before making financial decisions."],
+    "cta": "Ask about financial coordination"
+  },
+  {
+    "slug": "legal-documents",
+    "eyebrow": "Document readiness",
+    "title": "Know what to organise before you commit.",
+    "summary": "A practical document checklist for buying, selling or renting a property.",
+    "heroImage": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=85",
+    "highlights": ["Buyer, seller and tenant checklists", "RERA and title-document prompts", "Coordination with your chosen legal professional"],
+    "body": ["A property decision should never depend on a rushed document review. We help you prepare a clear checklist and understand which information needs professional verification.", "TDS Properties is not a law firm and does not provide legal advice. Please have all title, agreement and compliance documents reviewed by an independent qualified advocate."],
+    "cta": "Open the document checklist"
+  }
+]

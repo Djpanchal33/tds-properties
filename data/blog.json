@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "how-to-choose-an-ahmedabad-neighbourhood",
+    "title": "How to choose an Ahmedabad neighbourhood that suits your everyday life",
+    "excerpt": "A practical way to compare locations beyond the square footage and the asking price.",
+    "category": "Buying guide",
+    "publishedAt": "2026-10-01",
+    "readTime": "5 min read",
+    "tags": ["Ahmedabad", "Buying", "Residential"],
+    "image": "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=1400&q=85",
+    "body": ["Begin with the life you expect to have there: commute, schools, healthcare, everyday shopping and the kind of neighbourhood rhythm you enjoy.", "Then compare the practical details in person. Visit at different times, check the access roads and ask how the area is changing. The best fit is usually the place that still works on an ordinary weekday."]
+  },
+  {
+    "slug": "office-space-gift-city-checklist",
+    "title": "A checklist for choosing office space in GIFT City",
+    "excerpt": "The questions to take to a commercial viewing before you commit to the space.",
+    "category": "Commercial",
+    "publishedAt": "2026-09-18",
+    "readTime": "4 min read",
+    "tags": ["GIFT City", "Commercial", "Leasing"],
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=85",
+    "body": ["Set the brief before you tour: team size, client access, meeting needs, fit-out responsibility, parking and likely growth over the lease term.", "Compare the complete commercial picture, not only the stated rent. Ask about maintenance, access timing, handover condition and any costs that sit outside the headline number."]
+  },
+  {
+    "slug": "documents-to-organise-before-selling",
+    "title": "Documents to organise before listing a property for sale",
+    "excerpt": "Preparing early helps serious buyer conversations move more smoothly.",
+    "category": "Selling guide",
+    "publishedAt": "2026-09-04",
+    "readTime": "6 min read",
+    "tags": ["Selling", "Documents", "Ahmedabad"],
+    "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=85",
+    "body": ["Create a single folder for the property documents, tax information, floor plans, approvals and any building-specific records. This avoids scrambling when a buyer asks a sensible question.", "Requirements vary by transaction and property. Have the documentation reviewed by an independent qualified advocate before relying on it or making commitments."]
+  }
+]
