@@ -4,7 +4,10 @@ import { verifySession } from "@/lib/auth";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (pathname === "/admin/login") return NextResponse.next();
-  const isProtected = pathname.startsWith("/admin") || (pathname.startsWith("/api/admin/") && !["GET", "HEAD", "OPTIONS"].includes(request.method));
+  // Vercel Blob completes client uploads with a signed callback. The upload
+  // route validates that signature through handleUpload before accepting it.
+  const isVerifiedBlobCallback = pathname === "/api/admin/upload" && request.headers.has("x-vercel-signature");
+  const isProtected = !isVerifiedBlobCallback && (pathname.startsWith("/admin") || (pathname.startsWith("/api/admin/") && !["GET", "HEAD", "OPTIONS"].includes(request.method)));
   if (!isProtected) return NextResponse.next();
   if (await verifySession(request.cookies.get("tds_session")?.value)) return NextResponse.next();
   if (pathname.startsWith("/api/")) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
