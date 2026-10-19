@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Menu, MessageCircle, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
@@ -15,9 +16,17 @@ const links = [
 
 export function Brand({ light = false }: { name: string; light?: boolean }) {
   return (
-    <span className={`inline-flex flex-col leading-none ${light ? "text-cream" : "text-navy"}`}>
-      <b className="display text-[1.85rem] font-semibold tracking-[-.12em]">TDS</b>
-      <span className="mt-1 text-[.45rem] font-bold tracking-[.28em]">PROPERTIES</span>
+    <span className={`inline-flex overflow-hidden rounded-sm bg-white shadow-sm ${light ? "ring-1 ring-white/20" : "ring-1 ring-navy/10"}`}>
+      <span className="relative block h-16 w-32">
+        <Image
+          src="/tds-properties-logo.png"
+          alt="TDS Properties"
+          fill
+          priority
+          sizes="128px"
+          className="object-cover object-[50%_36%]"
+        />
+      </span>
     </span>
   );
 }
