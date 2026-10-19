@@ -14,17 +14,17 @@ const links = [
   { href: "/about", label: "Our story" },
 ];
 
-export function Brand({ light = false }: { name: string; light?: boolean }) {
+export function Brand({ name, onDark = false }: { name: string; onDark?: boolean }) {
   return (
-    <span className={`inline-flex overflow-hidden rounded-sm bg-white shadow-sm ${light ? "ring-1 ring-white/20" : "ring-1 ring-navy/10"}`}>
-      <span className="relative block h-16 w-32">
+    <span className={`inline-flex overflow-hidden rounded-md ${onDark ? "bg-white p-1.5 shadow-lg ring-1 ring-white/15" : ""}`}>
+      <span className="relative block h-14 w-36 sm:h-16 sm:w-40">
         <Image
           src="/tds-properties-logo.png"
-          alt="TDS Properties"
+          alt={name || "TDS Properties"}
           fill
           priority
-          sizes="128px"
-          className="object-cover object-[50%_36%]"
+          sizes="160px"
+          className={`object-cover object-[50%_36%] ${onDark ? "" : "mix-blend-multiply"}`}
         />
       </span>
     </span>
@@ -57,7 +57,7 @@ export default function Header({ settings, transparent = false }: { settings: Se
     <>
       <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${raised ? "bg-cream/95 text-navy shadow-sm backdrop-blur" : "text-cream"}`}>
         <div className="wrap flex h-20 items-center justify-between">
-          <Link href="/" aria-label="TDS Properties home"><Brand name={settings.logoText} light={!raised} /></Link>
+          <Link href="/" aria-label="TDS Properties home"><Brand name={settings.logoText} /></Link>
           <nav aria-label="Primary navigation" className="hidden items-center gap-5 xl:flex">
             {links.map((link) => <Link className="text-sm font-medium transition hover:text-gold" href={link.href} key={link.href}>{link.label}</Link>)}
             <Link href="/contact" className="rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-[#e3b85c]">Start a conversation</Link>
@@ -70,7 +70,7 @@ export default function Header({ settings, transparent = false }: { settings: Se
         {open && (
           <motion.div initial={{ clipPath: "circle(0% at 94% 5%)" }} animate={{ clipPath: "circle(150% at 94% 5%)" }} exit={{ clipPath: "circle(0% at 94% 5%)" }} transition={{ duration: .6, ease: [0.76, 0, .24, 1] }} className="fixed inset-0 z-[80] bg-navy px-6 pt-6 text-cream">
             <div className="flex items-start justify-between">
-              <Link onClick={() => setOpen(false)} href="/"><Brand name={settings.logoText} light /></Link>
+              <Link onClick={() => setOpen(false)} href="/"><Brand name={settings.logoText} onDark /></Link>
               <button aria-label="Close menu" onClick={() => setOpen(false)} className="grid h-11 w-11 place-items-center"><X /></button>
             </div>
             <nav className="mt-20 flex flex-col" aria-label="Mobile navigation">
