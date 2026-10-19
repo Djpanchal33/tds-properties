@@ -16,6 +16,10 @@ export async function commitJson(path: string, value: unknown, message: string) 
     method: "PUT", headers: { ...headers, "Content-Type": "application/json" },
     body: JSON.stringify({ message, content, sha: file.sha, branch })
   });
-  if (!response.ok) throw new Error("GitHub did not accept the update.");
+  if (!response.ok) {
+    const details = await response.json().catch(() => null) as { message?: string } | null;
+    const reason = details?.message ? `: ${details.message}` : "";
+    throw new Error(`GitHub rejected ${path} (${response.status})${reason}`);
+  }
   return response.json();
 }
